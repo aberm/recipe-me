@@ -1,0 +1,109 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "votes": 0,
+      "username": "miranda123",
+      "recipeTitle": "Key Lime Pie",
+      "minutes": 45,
+      "glutenFree": false,
+      "vegetarian": true,
+      "vegan": false,
+      "ingredients": [
+        {
+          "name": "flour",
+          "quanity": 2.5,
+          "units": "cups"
+        },
+        {
+          "name": "butter",
+          "quanity": 1,
+          "units": "stick"
+        },
+        {
+          "name": "sugar",
+          "quanity": 3,
+          "units": "tablespoons"
+        },
+        {
+          "name": "lime",
+          "quanity": 2,
+          "units": "fruits"
+        }
+      ],
+      "steps": [
+        "preheat oven to 350.",
+        "stir x y z.",
+        "mix well.",
+        "bake and enjoy."
+      ]
+    },
+    {
+      "id": 2,
+      "votes": 0,
+      "username": "stephanieluvsu",
+      "recipeTitle": "hot milk",
+      "minutes": 1,
+      "glutenFree": true,
+      "vegetarian": true,
+      "vegan": false,
+      "ingredients": [
+        {
+          "name": "milk",
+          "quanity": 1,
+          "units": "cup"
+        }
+      ],
+      "steps": [
+        "heat in microwave for 1 minute.",
+        "drink."
+      ],
+      "comments": [
+        "So easy and fast to make!",
+        "What's the point of this?"
+      ]
+    },
+    {
+      "id": 3,
+      "votes": 0,
+      "username": "MenaChaim",
+      "recipeTitle": "Kneidalach",
+      "minutes": 120,
+      "glutenFree": false,
+      "vegetarian": true,
+      "vegan": true,
+      "ingredients": [
+        {
+          "name": "flour",
+          "quanity": 4,
+          "units": "cups"
+        },
+        {
+          "name": "salt",
+          "quanity": 2,
+          "units": "pinches"
+        },
+        {
+          "name": "chicken broth",
+          "quanity": 3,
+          "units": "ladels"
+        },
+        {
+          "name": "love",
+          "quanity": 5,
+          "units": "heartfuls"
+        }
+      ],
+      "steps": [
+        "make it"
+      ],
+      "comments": [
+        "noice"
+      ]
+    },
+    {
+      "recipeTitle": "blintzes",
+      "id": 4
+    }
+  ]
+}
