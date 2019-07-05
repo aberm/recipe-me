@@ -7,9 +7,9 @@ const attachToListElement = jsonArray => {
     // itemEl.innerText = JSON.stringify(recipe);
 
     const p = document.createElement("p");
-    p.innerHTML = `<a href="recipe-page.html">${recipe.recipeTitle +
-      "\n" +
-      recipe.username}</a>`;
+    p.innerHTML = `<a href="recipe-page.html?id=${
+      recipe.id
+    }">${recipe.recipeTitle + "\n" + recipe.username}</a>`;
     p.style.textAlign = "center";
     itemEl.appendChild(p);
 
