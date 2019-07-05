@@ -1,61 +1,54 @@
-console.log("connected!");
-// .then(x) // Error!
+console.log("connected");
 
-// GET
-// fetch("https://my-heroku-test55.herokuapp.com/animals")
-//   // fetch("https://swapi.co/api/people/1/")
-//   // .then(response => response.text())
-//   // .then(response => console.log(response));
-//   .then(response => response.json())
-//   .then(json => console.log(json));
+const attachToListElement = jsonArray => {
+  let itemEl;
+  jsonArray.forEach(recipe => {
+    itemEl = document.createElement("p");
+    // itemEl.innerText = JSON.stringify(recipe);
 
-// POST
-// const obj = JSON.stringify({ name: null });
-//
-// fetch("https://my-heroku-test55.herokuapp.com/animals", {
-//   method: "POST",
-//   body: obj,
-//   headers: { "Content-Type": "application/json" }
-// })
-//   .then(response => response.json())
-//   .then(json => console.log(json));
+    const p = document.createElement("p");
+    p.innerHTML = `<a href="recipe-page.html">${recipe.recipeTitle +
+      "\n" +
+      recipe.username}</a>`;
+    p.style.textAlign = "center";
+    itemEl.appendChild(p);
 
-// PATCH
-// const newObj = JSON.stringify({ name: "Whale" });
-//
-// fetch("https://my-heroku-test55.herokuapp.com/animals/42", {
-//   method: "PATCH",
-//   body: newObj,
-//   headers: { "Content-Type": "application/json" }
-// })
-//   .then(response => response.json())
-//   .then(json => console.log(json));
+    listEl.appendChild(itemEl);
+  });
+};
 
-// DELETE
-// fetch("https://my-heroku-test55.herokuapp.com/animals/45", {
-//   method: "DELETE",
-//   headers: { "Content-Type": "application/json", Accept: "application/json" }
-// })
-//   .then(response => response.json())
-//   .then(json => console.log(json));
+/*
+const link = document.createElement("p");
+link.style.textAlign = "center";
+link.innerHTML = `<a href="/recipe-page">${recipe.recipeTitle}</a>`;
+itemEl.appendChild(link);
 
-// CRUD: Create, Read, Update, Delete
+const user = document.createElement("p");
+user.style.textAlign = "center";
+user.innerText = "by: " + recipe.username;
+itemEl.appendChild(user);
 
-// GET
-// POST
-// PATCH
-// DELETE
+listEl.appendChild(itemEl);
+*/
 
-// recipes
+// save list element to a variable
+let listEl = document.getElementById("list");
 
-fetch("http://localhost:3000/recipes")
+// fetch recipes
+fetch("http://localhost:3000/recipes?_page=1")
   .then(res => res.json())
-  .then(res => console.log(res));
+  .then(res => {
+    console.log(res);
+    attachToListElement(res);
+  });
 
-fetch("http://localhost:3000/recipes/4", {
-  method: "PATCH",
-  body: JSON.stringify({
-    recipeTitle: "blintzes"
-  }),
-  headers: { "Content-Type": "application/json" }
-});
+// iterate over each json recipe and --
+// recipeList.forEach(x => console.log(x));
+
+// load recipes onto list element
+
+// <ul>
+// <li>one</li>
+// <li>two</li>
+// <li>three</li>
+// </ul>
