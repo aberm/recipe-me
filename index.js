@@ -52,3 +52,40 @@ fetch("http://localhost:3000/recipes?_page=1")
 // <li>two</li>
 // <li>three</li>
 // </ul>
+
+// ===============
+// form processing
+
+// grab our form
+// make event listener on form submit ->
+document
+  .getElementById("newRecipe") // form element
+  .addEventListener("submit", function(event) {
+    event.preventDefault(); // make no reload
+    console.log(event);
+
+    // grab form info
+    const title = event.target.elements["title"].value;
+    const username = event.target.elements["username"].value;
+    console.log(title, username);
+
+    // make fetch request to database with said info
+    // POST
+
+    fetch("http://localhost:3000/recipes", {
+      method: "POST",
+      body: JSON.stringify({
+        recipeTitle: title,
+        username: username
+      }),
+      headers: { "Content-Type": "application/json" }
+    })
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        //TODO: create function to append HTML link
+      });
+
+    // then, make new html for that info,
+    // and attach that html to our page
+  });
